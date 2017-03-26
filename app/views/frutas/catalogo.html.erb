@@ -1,0 +1,11 @@
+<h1>Catalogo de frutas</h1>
+
+<ol>
+	<% if @frutas.blank? %>
+		<p>No hay existencia!!!</p>
+	<% else %>
+		<% @frutas.each do |fruta| %>
+			<li><%= link_to fruta.nombre, frutas_buscar_path(fruta.nombre) %></li>
+		<% end %>
+	<% end %>
+</ol>

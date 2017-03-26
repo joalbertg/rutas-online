@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Productos Facturacion</h1>
+
+<%= link_to 'Generar imagenes', generar_imagenes_productos_path, method: :put %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>imagen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= producto.imagen %></td>
+        <td><%= link_to 'Show', producto %></td>
+        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Limpiar imagen', limpiar_imagen_producto_path(producto), method: :put %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Producto', new_producto_path %>

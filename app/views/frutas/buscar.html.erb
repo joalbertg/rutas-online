@@ -1,0 +1,11 @@
+<h1>Busqueda de frutas</h1>
+<% if @fruta.blank? %>
+	<p>No se encontraron resultados</p>
+<% else %>
+	<h2>Buscaste: <%= @fruta.nombre %></h2>
+
+	<h3>definicion</h3>
+
+	<p><%= @fruta.descripcion %></p>
+	<p><%= @fruta.imagen %></p>
+<% end %>
